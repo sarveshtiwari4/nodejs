@@ -1,4 +1,4 @@
-const OnlineApplication = require("../models/onlineApplication.model.js");
+const OnlineApplication = require("../models/onlineapplication.model.js");
 
 console.log("300");
 // Create and Save a newmaster

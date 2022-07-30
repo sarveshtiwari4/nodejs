@@ -1,7 +1,7 @@
 module.exports = app => {
   //const isvalid = require("../auth");
   console.log("200");
-  const onlineApplication = require("../controllers/onlineApplication.controller.js");
+  const onlineApplication = require("../controllers/onlineapplication.controller.js");
 
   
   var router = require("express").Router();
