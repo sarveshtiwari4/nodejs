@@ -11,7 +11,7 @@ const OnlineApplication = function(onlineApplication) {
 };
 
 OnlineApplication.create = (newOA, onlineApplication) => {
-  sql.query("INSERT INTO onlineApplication SET ?", newOA, (err, res) => {
+  sql.query("INSERT INTO onlineapplication SET ?", newOA, (err, res) => {
     if (err) {
       console.log("error: ", err);
       onlineApplication(err, null);
@@ -24,7 +24,7 @@ OnlineApplication.create = (newOA, onlineApplication) => {
 };
 
 OnlineApplication.findById = (id, onlineApplication) => {
-  sql.query(`SELECT * FROM onlineApplication WHERE id = ${id}`, (err, res) => {
+  sql.query(`SELECT * FROM onlineapplication WHERE id = ${id}`, (err, res) => {
     if (err) {
       console.log("error: ", err);
       onlineApplication(err, null);
@@ -43,7 +43,7 @@ OnlineApplication.findById = (id, onlineApplication) => {
 };
 
 OnlineApplication.getAll = (advt_no, onlineApplication) => {
-  let query = "SELECT * FROM onlineApplication";
+  let query = "SELECT * FROM onlineapplication";
   
   if (advt_no) {
     query += ` WHERE title LIKE '%${advt_no}%'`;
@@ -62,7 +62,7 @@ OnlineApplication.getAll = (advt_no, onlineApplication) => {
 };
 
 OnlineApplication.getAllPublished = onlineApplication => {
-  sql.query("SELECT * FROM onlineApplication where published=1 order by item_code desc", (err, res) => {
+  sql.query("SELECT * FROM onlineapplication where published=1 order by item_code desc", (err, res) => {
     if (err) {
       console.log("error: ", err);
       onlineApplication(null, err);
@@ -98,7 +98,7 @@ OnlineApplication.updateById = (id,  onlineApplication, result) => {
 };
 
 OnlineApplication.remove = (id, onlineApplication) => {
-  sql.query("DELETE FROM onlineApplication WHERE id = ?", id, (err, res) => {
+  sql.query("DELETE FROM onlineapplication WHERE id = ?", id, (err, res) => {
     if (err) {
       console.log("error: ", err);
       onlineApplication(null, err);
@@ -117,7 +117,7 @@ OnlineApplication.remove = (id, onlineApplication) => {
 };
 
 OnlineApplication.removeAll = onlineApplication => {
-  sql.query("DELETE FROM onlineApplication", (err, res) => {
+  sql.query("DELETE FROM onlineapplication", (err, res) => {
     if (err) {
       console.log("error: ", err);
       onlineApplication(null, err);
