@@ -34,6 +34,8 @@ require("./app/routes/onlineapplication.routes.js")(app);
 
 require("./app/routes/latest_result.routes.js")(app);
 
+require("./app/routes/latest_advertisement.routes.js")(app);
+
 require("./app/routes/auth.js")(app);
 
 //require("./app/routes/login.js")(app);
